@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>The Cane Coders </title>
+
+<style type="text/css">
+
+<!--
+
+body {
+
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+
+	background: #666666;
+
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+
+	color: #000000;
+
+	padding: 30px;
+
+	background-color: #000000;
+
+}
+
+.oneColFixCtrHdr #container {
+
+	width: 1000px; /* the auto margins (in conjunction with a width) center the page */
+
+	border: thin ridge #E20000;
+
+	text-align: left;
+
+	margin-top: 0;
+
+	margin-right: auto;
+
+	margin-bottom: 0;
+
+	margin-left: auto;
+
+	background-color: #666666;
+
+}
+
+.oneColFixCtrHdr #header h1 {
+
+	margin: 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+
+}
+
+.oneColFixCtrHdr #mainContent {
+
+	background: #666666;
+
+	padding-top: 5px;
+
+	padding-right: 5px;
+
+	padding-bottom: 5px;
+
+	padding-left: 5px;
+
+}
+
+.oneColFixCtrHdr #footer {
+
+	background:#000000;
+
+}
+
+.oneColFixCtrHdr #footer p {
+
+	margin: 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+
+	color: #FF0000;
+
+	padding-top: 10px;
+
+	padding-right: 0;
+
+	padding-bottom: 10px;
+
+	padding-left: 20px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: medium;
+
+	font-style: italic;
+
+	font-weight: lighter;
+
+}
+
+#apDiv1 {
+
+	position:absolute;
+
+	left:663px;
+
+	top:370px;
+
+	width:170px;
+
+	height:220px;
+
+	z-index:2;
+
+}
+
+#apDiv2 {
+
+	position:absolute;
+
+	left:10%;
+
+	top:260px;
+
+	width:927px;
+
+	height:204px;
+
+	z-index:1;
+
+	background-color: #666666;
+
+}
+
+#apDiv3 {
+
+	position:absolute;
+
+	left:140px;
+
+	top:725px;
+
+	width:170px;
+
+	height:220px;
+
+	z-index:2;
+
+}
+
+#apDiv4 {
+
+	position:absolute;
+
+	left:874px;
+
+	top:506px;
+
+	width:170px;
+
+	height:220px;
+
+	z-index:2;
+
+}
+
+#apDiv5 {
+
+	position:absolute;
+
+	left:207px;
+
+	top:484px;
+
+	width:855px;
+
+	height:204px;
+
+	z-index:1;
+
+	background-color: #666666;
+
+}
+
+#apDiv6 {
+
+	position:absolute;
+
+	left:117px;
+
+	top:708px;
+
+	width:881px;
+
+	height:204px;
+
+	z-index:1;
+
+	background-color: #666666;
+
+}
+
+#apDiv7 {
+
+	position:absolute;
+
+	left:1px;
+
+	top:450px;
+
+	width:852px;
+
+	height:204px;
+
+	z-index:1;
+
+	background-color: #666666;
+
+}
+
+#apDiv8 {	position:absolute;
+
+	left:331px;
+
+	top:484px;
+
+	width:731px;
+
+	height:204px;
+
+	z-index:1;
+
+	background-color: #666666;
+
+}
+
+.about_us_content {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: medium;
+
+	font-style: italic;
+
+	color: #F8F0EE;
+
+	text-indent: 10px;
+
+	font-weight: lighter;
+
+}
+
+#apDiv9 {	position:absolute;
+
+	left:874px;
+
+	top:442px;
+
+	width:170px;
+
+	height:220px;
+
+	z-index:2;
+
+}
+
+#apDiv10 {	position:absolute;
+
+	left:874px;
+
+	top:442px;
+
+	width:170px;
+
+	height:220px;
+
+	z-index:2;
+
+}
+
+#apDiv11 {
+
+	position:absolute;
+
+	left:762px;
+
+	top:246px;
+
+	width:170px;
+
+	height:220px;
+
+	z-index:1;
+
+}
+
+.about_us_header {
+
+	color: #FF0000;
+
+	font-style: normal;
+
+	font-weight: bold;
+
+	font-size: large;
+
+}
+
+.style12 {font-size: small}
+
+#apDiv12 {
+
+	position:absolute;
+
+	left:299px;
+
+	top:1016px;
+
+	width:120px;
+
+	height:155px;
+
+	z-index:1;
+
+}
+
+.style13 {font-size: medium}
+
+-->
+
+</style>
+
+<script type="text/javascript">
+
+<!--
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_nbGroup(event, grpName) { //v6.0
+
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+
+  if (event == "init" && args.length > 2) {
+
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+
+      nbArr[nbArr.length] = img;
+
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+        if (!img.MM_up) img.MM_up = img.src;
+
+        img.src = img.MM_dn = args[i+1];
+
+        nbArr[nbArr.length] = img;
+
+    } }
+
+  } else if (event == "over") {
+
+    document.MM_nbOver = nbArr = new Array();
+
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+
+      nbArr[nbArr.length] = img;
+
+    }
+
+  } else if (event == "out" ) {
+
+    for (i=0; i < document.MM_nbOver.length; i++) {
+
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+
+  } else if (event == "down") {
+
+    nbArr = document[grpName];
+
+    if (nbArr)
+
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+
+    document[grpName] = nbArr = new Array();
+
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+
+      nbArr[nbArr.length] = img;
+
+  } }
+
+}
+
+//-->
+
+</script>
+
+</head>
+
+
+
+<body class="oneColFixCtrHdr" onload="MM_preloadImages('assets/home_down.png','assets/project_down.png','assets/data_down.png','assets/about_us_down.png','assets/about_us_up.png')">
+
+<div id="container">
+
+  <div id="header">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" id="head" summary="Header layout">
+
+      <tr>
+
+        <td width="25%" height="218" valign="top"><img src="assets/cane_banner.png" width="248" height="200" /></td>
+
+        <td width="75%" valign="top"><div align="center"><img src="assets/banner.png" width="752" height="170" /><br />
+
+          <table border="0" cellpadding="0" cellspacing="0" id="navbar">
+
+            <tr>
+
+              <td><a href="index.html" target="_top" onclick="MM_nbGroup('down','group1','home','assets/home_down.png',1)" onmouseover="MM_nbGroup('over','home','assets/home_down.png','assets/home_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/home_up.png" alt="Home" name="home" border="0" id="home" onload="" /></a></td>
+
+              <td><a href="project.html" target="_top" onclick="MM_nbGroup('down','group1','project','assets/project_down.png',1)" onmouseover="MM_nbGroup('over','project','assets/project_down.png','assets/project_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/project_up.png" alt="Project" name="project" border="0" id="project" onload="" /></a></td>
+
+              <td><a href="data.html" target="_top" onclick="MM_nbGroup('down','group1','data','assets/data_down.png',1)" onmouseover="MM_nbGroup('over','data','assets/data_down.png','assets/data_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/data_up.png" alt="Data" name="data" border="0" id="data" onload="" /></a></td>
+
+              <td><a href="about_us.html" target="_top" onclick="MM_nbGroup('down','group1','about_us','assets/about_us_down.png',1)" onmouseover="MM_nbGroup('over','about_us','assets/about_us_down.png','assets/about_us_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/about_us_down.png" alt="About Us" name="about_us" border="0" id="about_us" onload="MM_nbGroup('init','group1','about_us','assets/about_us_up.png',1)" /></a></td>
+
+            </tr>
+
+          </table>
+
+        </div></td>
+
+      </tr>
+
+    </table>
+
+    </div>
+
+  <div class="oneColFixCtrHdr" id="mainContent">
+
+    <table width="100%" border="0" cellspacing="5" cellpadding="5" summary="About Us layout">
+
+      <tr>
+
+        <td height="165" align="right" valign="top" bgcolor="#666666"><img src="assets/katie.jpg" width="120" height="155" align="texttop" /></td>
+
+        <td valign="top" bgcolor="#666666" class="about_us_header"><p>Katie Jablonski</p>
+
+          <p><span class="about_us_content">Katie is from Brick, New Jersey and is a junior meteorology undergraduate at  Penn State.  She is in the forecasting  and communications option with a GIS minor.   She will soon start an internship in Maryland with WeatherBug this  summer where she plans to learn how to better apply GIS applications to weather  as well as improve her forecasting skills.   Katie enjoys spending time with family and friends, running, swimming,  and relaxing.</span> </p>
+
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td height="165" align="right" valign="top" bgcolor="#666666"><img src="assets/marc.jpg" width="120" height="155" /></td>
+
+        <td valign="top" bgcolor="#666666" class="about_us_header"><p>Marc Chenard<br />
+
+        </p>
+
+        <p><span class="about_us_content">Marc is from Kingston, Massachusetts and is also a junior meteorology  undergraduate.  He is a general option  with a global buisness strategies minor.   Marc is a brilliant forecaster and holds a SCEP position at the National  Weather Service in State College.  Marc  enjoys sports; particularly baseball and basketball.  Marc also enjoys hiking, pizza, and french  fries. </span><br />
+
+        </p></td>
+
+      </tr>
+
+      <tr>
+
+        <td height="165" align="right" valign="top" bgcolor="#666666"><img src="assets/maria.jpg" width="120" height="155" /></td>
+
+        <td valign="top" bgcolor="#666666" class="about_us_header"><p>Maria Zatko</p>
+
+          <p class="about_us_content">From Western Massachusetts, Maria is a  junior meteorology undergraduate at Penn   State University.  She is an atmospheric science option and a climatology  minor.  She looks forward to interning in  Seattle, Washington  this summer and she hopes to pursue atmospheric chemistry in graduate  school.  Maria enjoys running,  glassblowing, coffee and traveling.  <br />
+
+        </p>        </td>
+
+      </tr>
+
+      <tr>
+
+        <td height="165" align="right" valign="top" bgcolor="#666666"><img src="assets/me.jpg" width="120" height="155" /></td>
+
+        <td valign="top" bgcolor="#666666" class="about_us_header"><p>David Cavaceci</p>
+
+        <p class="about_us_content">A Cleveland Ohio native, David spends his time fulfilling requirements for a Meteorology B.S. with the option of Weather Risk Management. His career plans include incorporating his meteorological training into various industries, including business, energy, and commodity trading. David is an active member of Acacia national fraternity, through which he participates in various intramural sports and PSU's Dance maraTHON. In his free time, David enjoys playing guitar, webdesigning, and editing music. </p></td>
+
+      </tr>
+
+    </table>
+
+    </div>
+
+  <div id="footer">
+
+    <p align="center"><span class="style12"><strong><span class="style13">The Cane Coders</span><br />
+
+    </strong>Penn State Meteorology<br />
+
+University Park, PA 16802<br />
+
+Last Updated:
+
+<!-- #BeginDate format:fAm1 -->Friday January 22, 2010<!-- #EndDate -->
+
+    </span>
+
+      <!-- end #footer -->
+
+    </p>
+
+  </div>
+
+<!-- end #container --></div>
+
+
+</body>
+
+</html>
+

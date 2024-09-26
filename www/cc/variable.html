@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>The Cane Coders </title>
+
+<style type="text/css">
+
+<!--
+
+body {
+
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+
+	background: #666666;
+
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+
+	color: #000000;
+
+	padding: 30px;
+
+	background-color: #000000;
+
+}
+
+.oneColFixCtrHdr #container {
+
+	width: 1000px;
+
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+
+	border: thin ridge #E20000;
+
+	text-align: left; /* this overrides the text-align: center on the body element. */
+
+	background-color: #666666;
+
+}
+
+.oneColFixCtrHdr #header h1 {
+
+	margin: 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+
+}
+
+.oneColFixCtrHdr #mainContent {
+
+	background-color: #666666;
+
+	color: #F2E9E7;
+
+}
+
+.oneColFixCtrHdr #footer {
+
+	background:#000000;
+
+	text-align: center;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: small;
+
+	font-style: italic;
+
+	font-weight: lighter;
+
+	color: #FF0000;
+
+	padding: 5px;
+
+}
+
+.oneColFixCtrHdr #footer p {
+
+	margin: 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+
+	color: #FF0000;
+
+	padding-top: 10px;
+
+	padding-right: 0;
+
+	padding-bottom: 10px;
+
+	padding-left: 20px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: small;
+
+	font-style: italic;
+
+	font-weight: lighter;
+
+	text-align: left;
+
+}
+
+.oneColFixCtrHdr #container #main_block {
+
+	background-color: #FFFFFF;
+
+	text-indent: 10px;
+
+	font-style: italic;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: large;
+
+	font-weight: lighter;
+
+}
+
+.style1 {
+
+	color: #000000;
+
+	font-style: normal;
+
+}
+
+.style6 {
+
+	color: #FFFFFF;
+
+	text-indent: 0px;
+
+}
+
+.style7 {
+
+	font-size: x-large;
+
+	font-style: normal;
+
+}
+
+.variables_content {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: medium;
+
+	font-style: italic;
+
+	color: #FFFFFF;
+
+}
+
+.style9 {font-size: medium}
+
+.stupidcelwontstopindenting {
+
+	text-align: left;
+
+	text-indent: 0px;
+
+}
+
+.style11 {
+
+	text-align: left;
+
+	text-indent: 0px;
+
+	color: #FFFFFF;
+
+	font-size: medium;
+
+	font-style: italic;
+
+}
+
+-->
+
+</style>
+
+<script type="text/javascript">
+
+<!--
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_nbGroup(event, grpName) { //v6.0
+
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+
+  if (event == "init" && args.length > 2) {
+
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+
+      nbArr[nbArr.length] = img;
+
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+        if (!img.MM_up) img.MM_up = img.src;
+
+        img.src = img.MM_dn = args[i+1];
+
+        nbArr[nbArr.length] = img;
+
+    } }
+
+  } else if (event == "over") {
+
+    document.MM_nbOver = nbArr = new Array();
+
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+
+      nbArr[nbArr.length] = img;
+
+    }
+
+  } else if (event == "out" ) {
+
+    for (i=0; i < document.MM_nbOver.length; i++) {
+
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+
+  } else if (event == "down") {
+
+    nbArr = document[grpName];
+
+    if (nbArr)
+
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+
+    document[grpName] = nbArr = new Array();
+
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+
+      nbArr[nbArr.length] = img;
+
+  } }
+
+}
+
+//-->
+
+</script>
+
+</head>
+
+
+
+<body class="oneColFixCtrHdr" onload="MM_preloadImages('assets/home_down.png','assets/project_down.png','assets/data_down.png','assets/about_us_down.png','assets/home_up.png')">
+
+
+
+<div id="container">
+
+  <div id="header">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" id="head" summary="Header layout">
+
+      <tr>
+
+        <td width="25%" valign="top"><span class="style7"><a name="top" id="top"></a></span><img src="assets/cane_banner.png" width="248" height="200" /></td>
+
+        <td width="75%" valign="top"><div align="center"><img src="assets/banner.png" width="752" height="170" /><br />
+
+          <table border="0" cellpadding="0" cellspacing="0" id="navbar">
+
+            <tr>
+
+              <td><a href="index.html" target="_top" onclick="MM_nbGroup('down','group1','home','assets/home_down.png',1)" onmouseover="MM_nbGroup('over','home','assets/home_down.png','assets/home_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/home_down.png" alt="Home" name="home" border="0" id="home" onload="MM_nbGroup('init','group1','home','assets/home_up.png',1)" /></a></td>
+
+              <td><a href="project.html" target="_top" onclick="MM_nbGroup('down','group1','project','assets/project_down.png',1)" onmouseover="MM_nbGroup('over','project','assets/project_down.png','assets/project_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/project_up.png" alt="Project" name="project" border="0" id="project" onload="" /></a></td>
+
+              <td><a href="data.html" target="_top" onclick="MM_nbGroup('down','group1','data','assets/data_down.png',1)" onmouseover="MM_nbGroup('over','data','assets/data_down.png','assets/data_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/data_up.png" alt="Data" name="data" width="188" height="30" border="0" id="data" onload="" /></a></td>
+
+              <td><a href="about_us.html" target="_top" onclick="MM_nbGroup('down','group1','about_us','assets/about_us_down.png',1)" onmouseover="MM_nbGroup('over','about_us','assets/about_us_down.png','assets/about_us_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/about_us_up.png" alt="About Us" name="about_us" width="188" height="30" border="0" id="about_us" onload="" /></a></td>
+
+            </tr>
+
+          </table>
+
+        </div></td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <div id="main_block">
+
+    <div class="oneColFixCtrHdr" id="mainContent">
+
+      <blockquote class="style1">
+
+        <p align="center" class="style7">Defined meteorological variables and terms used in  this project: <br />
+
+        </p>
+
+        <table width="100%" border="0" cellspacing="5" cellpadding="5" summary="variables_content">
+
+          <tr>
+
+            <th width="16%" align="right" valign="top" scope="row"><div align="right">WEKA:</div></th>
+
+            <td width="84%" class="variables_content"><span class="style6">Weka contains a collection of  visualization tools and algorithms for data analysis and modeling, together  with graphical user interfaces.  Weka  produces linear regression models that use various combinations of synoptic and  hurricane variables to create statistical hurricane track and intensity  forecasts.  </span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Beta effect:</div></th>
+
+            <td class="variables_content"><span class="style6">The beta effect is seen through our analysis. A hurricane rotates cyclonically  (anticlockwise) in the northern hemisphere. To the west of the storm, negative  (clockwise motion) vorticity develops because f is decreasing as the winds  travel southward to lower latitudes. To the east of the storm, positive  vorticity develops because f will increase as southerly winds head towards  poles (causing a greater shift to the right with increasing latitude). The  vorticity imbalance will shift the hurricane towards values of lesser (more  negative) vorticity, which is to the west. As the shift in vorticity occurs,  the storm becomes misshapen and its center has a nonzero component of wind.  This nonzero component of wind will be southerly and give the hurricane a  component of northern propagation. The beta effect shifts storms  west-north-west of their expected motion which is most strongly dependent on  their steering winds. The longitudinal analysis depicts the beta effect  correctly. We found that northerly motion will lead to a positive change in  longitude, which corresponds to westerly motion. Southerly motion will lead to  easterly motion.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Angular momentum:</div></th>
+
+            <td class="variables_content"><span class="style6">Angular momentum is a conserved quantity. Angular momentum is defined by  velocity * radius. Angular momentum is useful in analyzing numerous variables  in our weka data. It explains why the radius of maximum winds increases with  decreasing intensity. This property was most clearly shown when we analyzed intensity,  latitude, and landmask variables. The radius of maximum wind speed is typically  found at the inner edge of the eyewall. The eye will decrease in size with an  increase in intensity to conserve angular momentum. As the velocity (intensity)  of a storm increases, the radius must decrease according to the above equation.  As a storm travels onto land or into colder waters, its intensity will  decrease. The radius of maximum winds will therefore increase because the winds  are not blowing as strong and conservation must occur.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Vorticity:</div></th>
+
+            <td class="variables_content"><span class="style6">Absolute vorticity is conserved on Earth. The absolute vorticity consists of  the sum of relative vorticity and planetary vorticity. Planetary vorticity (f)  increases in the directions of the poles. To compensate and conserve absolute  vorticity, as a storm travels to higher latitudes, its relative vorticity must  decrease because planetary vorticity increases. Vorticity is du/dx - dv/dy and  represents spin in the atmosphere. As a hurricane travels to higher latitudes,  all the radii of equal wind contours will increase because the storm is not  spun up as tightly since it has less relative vorticity. As the hurricane  travels to lower latitudes, the radii will shrink and the storm spins faster  and contracts inward. Vorticity arguments are well depicted in our analysis of  the radius of 34 knot winds. With a positive change in latitude, the radius of  34 knot winds increases. The opposite is true for a negative change in  latitude.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Sheering winds:</div></th>
+
+            <td class="variables_content"><span class="style6">A main component of hurricane movement depends upon the direction of the winds  the storm is embedded in. The mean of the wind layers will determine the  direction. This is seen in our longitude analysis. If easterly winds are  present, the change in longitude will be negative. This negative change  represents easterly hurricane movement (the hurricane is moving into more  negative longitude positions). If westerly winds are present, the change in  longitude will be positive, leading to a positive (westerly) longitude change.  The V component of the wind was a smaller influence in the equation. A  southerly flow lead to eastern movement while northerly flow leads to western  movement for 925mb and 300mb winds. The opposite is true for the 850mb and  700mb layer, which may reflect the beta effect slightly. This argument does not  match sheering, but perhaps shows the influence of the coriolis force to direct  the storm to the right of the winds.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Storm classifications:</div></th>
+
+            <td align="left" valign="top" class="style11">Tropical depression: &lt; 34 knots<br />
+
+Tropical storm: 34-63 knots   <br />
+
+Category 1 Hurricane: 64-82knots<br />
+
+Category 2 Hurricane: 83-95 knots<br />
+
+Category 3 Hurricane: 96- 112 knots<br />
+
+Category 4 Hurricane: 113-135 knots<br />
+
+Category 5 Hurricane: &gt;135 knots</td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right"><a name="radius" id="radius2"></a>Radius of Maximum Winds:</div></th>
+
+            <td class="variables_content"><span class="style6">This radius  represents the distance from the center of the storm at which maximum wind  speed is reached.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Radius of 50 knot winds:</div></th>
+
+            <td class="variables_content"><span class="style6">This is  representative of the distance from the center of the storm to wind speeds of  50 knots.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Radius of 34 knot winds :</div></th>
+
+            <td class="variables_content"><span class="style6">This is  representative of the distance from the center of the storm to wind speeds of  tropical depression strength.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Radius of 64 knot winds:</div></th>
+
+            <td class="variables_content"><span class="style6">This is  representative of the distance from the center of the storm to wind speeds of  category 1 hurricane strength.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Intensity:</div></th>
+
+            <td class="variables_content"><span class="style6">A measure of the energy of a  storm.  In this project, the intensity is  most efficiently used as a comparison between storms.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right"><a name="uwind" id="uwind2"></a>U Wind:</div></th>
+
+            <td class="variables_content"><span class="style6">This is the zonal wind speed.  The zonal wind speed is movement in the east  and west directions.  If the zonal wind  is positive, the wind flow is from west to east.  If the zonal wind is negative, the wind flow  is from east to west. In our model we used the wind from points surrounding the storm in order to try to capture the background environment of the storm. We did not include the wind directly on top of the storm in an attempt to ignore the strong winds produced by the storm itself.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">V Wind:</div></th>
+
+            <td class="variables_content"><span class="style6">This is the meridional wind  speed.  The meridional wind speed is  movement in the north and south directions.   If the meridional wind is positive, the wind flow is from south to  north.  If the zonal wind is negative,  the wind flow is from north to south.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Shear:</div></th>
+
+            <td class="variables_content"><span class="style6">The wind difference between various  pressure levels.  The difference between  the 925 and 250mb level is frequently used to predict the future paths and  intensities of hurricanes.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Latitude:</div></th>
+
+            <td class="variables_content"><span class="style6">The meridional component of an  imaginary grid system breaking Earth into easy to reference coordinates.  One degree latitude is 6076 feet, and there  are 90 degrees of latitude in each hemisphere.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Longitude:</div></th>
+
+            <td class="variables_content"><span class="style6">The zonal component of an  imaginary grid system breaking Earth into easy to reference coordinates.  A degree of longitude length depends on the  circumference of the Earth and thus the degree of latitude.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">“Variable” Change Back:</div></th>
+
+            <td class="variables_content"><span class="style6">Averages two  variables over a three hour time period.   The variable three hours prior is subtracted from the present variable. </span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">“Variable” Change Forward:</div></th>
+
+            <td class="variables_content"><span class="style6">Averages two  variables over a three hour time period.   The variable three hours in advance is subtracted from the present  variable.</span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Relative Humidity:</div></th>
+
+            <td class="variables_content"><span class="style6">A measure of the amount of  moisture in the atmosphere.  The relative  humidity is a ratio between the vapor pressure and the equilibrium vapor  pressure or the mixing ration and saturation mixing ratio.  </span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Land/Sea Mask:</div></th>
+
+            <td class="variables_content"><span class="style6">A simple observation of  whether the storm was over land.  If over  land, a value of 1 was assigned; if over water, a value of 0 was assigned. </span></td>
+
+          </tr>
+
+          <tr>
+
+            <th align="right" valign="top" scope="row"><div align="right">Sea Surface Temperature:</div></th>
+
+            <td class="variables_content"><span class="style6">For our project this refers to the average sea surface temperature beneath and around the storms current position. In cases where the storm is over land, this variable may refer to land surface temperature.</span></td>
+
+          </tr>
+
+        </table>
+
+        <div align="center"></div>
+
+                  <div align="center"><a href="#top">Back to top</a></div>
+
+      </blockquote>
+
+    </div>
+
+  </div>
+
+  <div id="footer">
+
+    <div align="center"><strong><span class="style9">The Cane Coders</span><br />
+
+    </strong>Penn State Meteorology<br />
+
+University Park, PA 16802<br />
+
+Last Updated:
+
+<!-- #BeginDate format:fAm1 -->Friday January 22, 2010<!-- #EndDate -->
+
+    </div>
+
+  </div>
+
+<!-- end #container --></div>
+
+</body>
+
+</html>
+

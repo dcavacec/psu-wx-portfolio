@@ -1,0 +1,3113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>The Cane Coders </title>
+
+<style type="text/css">
+
+<!--
+
+body {
+
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+
+	background: #666666;
+
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+
+	color: #000000;
+
+	padding: 30px;
+
+	background-color: #000000;
+
+}
+
+.oneColFixCtrHdr #container {
+
+	width: 1000px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+
+	background: #FFFFFF;
+
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+
+	border: thin ridge #E20000;
+
+	text-align: left; /* this overrides the text-align: center on the body element. */
+
+}
+
+.oneColFixCtrHdr #header h1 {
+
+	margin: 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+
+}
+
+.oneColFixCtrHdr #mainContent {
+
+	padding: 5px 5px 5px 5px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+
+	background: #666666;
+
+}
+
+.oneColFixCtrHdr #footer {
+
+	background:#000000;
+
+}
+
+.oneColFixCtrHdr #footer p {
+
+	margin: 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+
+	color: #FF0000;
+
+	padding-top: 10px;
+
+	padding-right: 0;
+
+	padding-bottom: 10px;
+
+	padding-left: 20px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: medium;
+
+	font-style: italic;
+
+	font-weight: lighter;
+
+}
+
+.style1 {color: #FFFFFF}
+
+.style11 {font-size: large}
+
+.style12 {font-size: small}
+
+.style14 {color: #FFFFFF; font-style: italic; }
+
+.style15 {color: #000000; font-size: x-large; }
+
+.style16 {color: #000000}
+
+.style17 {font-size: x-large}
+
+.style18 {
+
+	font-size: small;
+
+	font-style: italic;
+
+	color: #FFFFff;
+
+}
+
+.style19 {font-size: medium}
+
+.style20 {color: #FFFFFF; font-style: italic; font-size: large; }
+
+-->
+
+</style>
+
+<script type="text/javascript">
+
+<!--
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_nbGroup(event, grpName) { //v6.0
+
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+
+  if (event == "init" && args.length > 2) {
+
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+
+      nbArr[nbArr.length] = img;
+
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+        if (!img.MM_up) img.MM_up = img.src;
+
+        img.src = img.MM_dn = args[i+1];
+
+        nbArr[nbArr.length] = img;
+
+    } }
+
+  } else if (event == "over") {
+
+    document.MM_nbOver = nbArr = new Array();
+
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+
+      nbArr[nbArr.length] = img;
+
+    }
+
+  } else if (event == "out" ) {
+
+    for (i=0; i < document.MM_nbOver.length; i++) {
+
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+
+  } else if (event == "down") {
+
+    nbArr = document[grpName];
+
+    if (nbArr)
+
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+
+    document[grpName] = nbArr = new Array();
+
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+
+      nbArr[nbArr.length] = img;
+
+  } }
+
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+
+  if (restore) selObj.selectedIndex=0;
+
+}
+
+//-->
+
+</script>
+
+</head>
+
+
+
+<body class="oneColFixCtrHdr" onload="MM_preloadImages('assets/home_down.png','assets/project_down.png','assets/data_down.png','assets/about_us_down.png','assets/data_up.png')">
+
+
+
+<div id="container">
+
+  <div id="header">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" id="head" summary="Header layout">
+
+      <tr>
+
+        <td width="25%" valign="top"><span class="style1"><span class="style11"><em><a name="top" id="top"></a></em></span></span><img src="assets/cane_banner.png" width="248" height="200" /></td>
+
+        <td width="75%" valign="top"><div align="center"><img src="assets/banner.png" width="752" height="170" />
+
+          <table border="0" cellpadding="0" cellspacing="0" id="navbar">
+
+            <tr>
+
+              <td><a href="index.html" target="_top" onclick="MM_nbGroup('down','group1','home','assets/home_down.png',1)" onmouseover="MM_nbGroup('over','home','assets/home_down.png','assets/home_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/home_up.png" alt="Home" name="home" border="0" id="home" onload="" /></a></td>
+
+              <td><a href="project.html" target="_top" onclick="MM_nbGroup('down','group1','project','assets/project_down.png',1)" onmouseover="MM_nbGroup('over','project','assets/project_down.png','assets/project_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/project_up.png" alt="Project" name="project" border="0" id="project" onload="" /></a></td>
+
+              <td><a href="data.html" target="_top" onclick="MM_nbGroup('down','group1','data','assets/data_down.png',1)" onmouseover="MM_nbGroup('over','data','assets/data_down.png','assets/data_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/data_down.png" alt="Data" name="data" border="0" id="data" onload="MM_nbGroup('init','group1','data','assets/data_up.png',1)" /></a></td>
+
+              <td><a href="about_us.html" target="_top" onclick="MM_nbGroup('down','group1','about_us','assets/about_us_down.png',1)" onmouseover="MM_nbGroup('over','about_us','assets/about_us_down.png','assets/about_us_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/about_us_up.png" alt="About Us" name="about_us" width="188" height="30" border="0" id="about_us" onload="" /></a></td>
+
+            </tr>
+
+          </table>
+
+        </div></td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <div id="mainContent">
+
+    <blockquote>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="style1">&nbsp;<span class="style11"><em>This  page contains drop down menus which allows various data scatterplots to be  viewed. The data is obtained from the  Paul Kossin dataset and includes intensity vs. time and various wind radii. The scatterplots can be viewed on a yearly  basis; each storm in a year has its individual scatterplot.</em></span></span></p>
+
+      <p class="style20">&nbsp;&nbsp;&nbsp;&nbsp; This page also contains all  of the hurricane tracks and storm intensities for every year in the Atlantic  Basin. All storms are overlayed on one  map for each year. A legend appears on  each map depicting the corresponding color for each storm intensity category.</p>
+
+      <p class="style14"><br />
+
+      </p>
+
+      <hr />
+
+      <p>&nbsp;</p>
+
+    </blockquote>
+
+    <div align="left" class="oneColFixCtrHdr">
+
+      <table width="990" border="0" cellspacing="0" cellpadding="5" summary="content
+
+">
+
+        <tr>
+
+          <td bgcolor="#666666"><div align="center" class="style15">Scatter Plots</div></td>
+
+          <td bgcolor="#666666"><div align="center" class="style15">Map Projections</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td width="485"><table width="98%" cellpadding="5" cellspacing="5" id="int vs. table2">
+
+            <tr>
+
+              <td width="364" bgcolor="#666666"><div align="right" class="style1"><em>Maximum wind radius vs. intensity:</em></div></td>
+
+              <td width="86" align="center" valign="middle" bgcolor="#666666"><form name="form4" id="form5">
+
+                  <div align="center">
+
+                    <select name="jumpMenu5" id="jumpMenu5" onchange="MM_jumpMenu('parent',this,0)">
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1983.jpg">1983</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1984.jpg">1984</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1985.jpg">1985</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1986.jpg">1986</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1987.jpg">1987</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1988.jpg">1988</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1989.jpg">1989</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1990.jpg">1990</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1991.jpg">1991</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1992.jpg">1992</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1993.jpg">1993</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1994.jpg">1994</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1995.jpg">1995</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1996.jpg">1996</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1997.jpg">1997</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1998.jpg">1998</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius1999.jpg">1999</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius2000.jpg">2000</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius2001.jpg">2001</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius2002.jpg">2002</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius2003.jpg">2003</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius2004.jpg">2004</option>
+
+                      <option value="http://www.personal.psu.edu/mbc5025/radius2005.jpg">2005</option>
+
+                    </select>
+
+                    </div>
+
+              </form>
+
+                <span class="style1"></span></td>
+
+            </tr>
+
+            <tr>
+
+              <td bgcolor="#666666"><div align="right" class="style14">64 knot wind radius vs. intensity:</div></td>
+
+              <td align="center" valign="middle" bgcolor="#666666"><form name="form" id="form6">
+
+                  <select name="jumpMenu5" id="jumpMenu6" onchange="MM_jumpMenu('parent',this,0)">
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1983.jpg">1983</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1984.jpg">1984</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1985.jpg">1985</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1986.jpg">1986</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1987.jpg">1987</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1988.jpg">1988</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1989.jpg">1989</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1990.jpg">1990</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1991.jpg">1991</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1992.jpg">1992</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1993.jpg">1993</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1994.jpg">1994</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1995.jpg">1995</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1996.jpg">1996</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1997.jpg">1997</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1998.jpg">1998</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt1999.jpg">1999</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt2000.jpg">2000</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt2001.jpg">2001</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt2002.jpg">2002</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt2003.jpg">2003</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt2004.jpg">2004</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/64kt2005.jpg">2005</option>
+
+                  </select>
+
+                </form>
+
+                  <span class="style1"></span></td>
+
+            </tr>
+
+            <tr>
+
+              <td bgcolor="#666666"><div align="right" class="style14">50 knot wind radius vs. intensity:</div></td>
+
+              <td align="center" valign="middle" bgcolor="#666666"><span class="style1">
+
+                <select name="50kt wind scatter2" id="50kt wind scatter2" onchange="MM_jumpMenu('parent',this,0)">
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1983.jpg" selected="selected">1983</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1984.jpg">1984</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1985.jpg">1985</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1986.jpg">1986</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1987.jpg">1987</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1988.jpg">1988</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1989.jpg">1989</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1990.jpg">1990</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1991.jpg">1991</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1992.jpg">1992</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1993.jpg">1993</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1994.jpg">1994</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1995.jpg">1995</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1996.jpg">1996</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1997.jpg">1997</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1998.jpg">1998</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt1999.jpg">1999</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt2000.jpg">2000</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt2001.jpg">2001</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt2002.jpg">2002</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt2003.jpg">2003</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt2004.jpg">2004</option>
+
+                  <option value="http://www.personal.psu.edu/mbc5025/50kt2005.jpg">2005</option>
+
+                </select>
+
+              </span></td>
+
+            </tr>
+
+            <tr>
+
+              <td bgcolor="#666666"><div align="right" class="style14">34 knot wind radius vs. intensity:</div></td>
+
+              <td align="center" valign="middle" bgcolor="#666666"><form name="form2" id="form7">
+
+                  <select name="jumpMenu5" id="jumpMenu7" onchange="MM_jumpMenu('parent',this,0)">
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1983.jpg">1983</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1984.jpg">1984</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1985.jpg">1985</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1986.jpg">1986</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1987.jpg">1987</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1988.jpg">1988</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1989.jpg">1989</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1990.jpg">1990</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1991.jpg">1991</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1992.jpg">1992</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1993.jpg">1993</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1994.jpg">1994</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1995.jpg">1995</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1996.jpg">1996</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1997.jpg">1997</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1998.jpg">1998</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale1999.jpg">1999</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale2000.jpg">2000</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale2001.jpg">2001</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale2002.jpg">2002</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale2003.jpg">2003</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale2004.jpg">2004</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/gale2005.jpg">2005</option>
+
+                  </select>
+
+                </form>
+
+                  <span class="style1"></span></td>
+
+            </tr>
+
+            <tr>
+
+              <td bgcolor="#666666"><div align="right" class="style14">Intensity vs. time:</div></td>
+
+              <td align="center" valign="middle" bgcolor="#666666"><form name="form3" id="form8">
+
+                  <select name="jumpMenu5" id="jumpMenu8" onchange="MM_jumpMenu('parent',this,0)">
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1983.jpg">1983</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1984.jpg">1984</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1985.jpg">1985</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1986.jpg">1986</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1987.jpg">1987</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1988.jpg">1988</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1989.jpg">1989</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1990.jpg">1990</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1991.jpg">1991</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1992.jpg">1992</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1993.jpg">1993</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1994.jpg">1994</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1995.jpg">1995</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1996.jpg">1996</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1997.jpg">1997</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1998.jpg">1998</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity1999.jpg">1999</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity2000.jpg">2000</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity2001.jpg">2001</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity2002.jpg">2002</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity2003.jpg">2003</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity2004.jpg">2004</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/intensity2005.jpg">2005</option>
+
+                  </select>
+
+                </form>
+
+                  <span class="style1"></span></td>
+
+            </tr>
+
+          </table></td>
+
+          <td width="485" valign="top"><table width="99%" cellpadding="5" cellspacing="5" id="int vs. table3">
+
+            <tr>
+
+              <td height="180" bgcolor="#666666"><div align="right" class="style14">
+
+                <p align="center">Storm track and intensity map:</p>
+
+                <p align="center">&nbsp;</p>
+
+                <p align="center">
+
+                  <select name="jumpMenu9" id="jumpMenu9" onchange="MM_jumpMenu('parent',this,0)">
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_01.png">1983</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_02.png">1984</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_03.png">1985</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_04.png">1986</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_05.png">1987</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_06.png">1988</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_07.png">1989</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_08.png">1990</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_09.png">1991</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_10.png">1992</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_11.png">1993</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_12.png">1994</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_13.png">1995</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_14.png">1996</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_15.png">1997</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_16.png">1998</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_17.png">1999</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_18.png">2000</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_19.png">2001</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_20.png">2002</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_21.png">2003</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_22.png">2004</option>
+
+                    <option value="http://www.personal.psu.edu/mbc5025/milestone2volume2article1_23.png">2005</option>
+
+                  </select>
+
+                </p>
+
+                <p>&nbsp; </p>
+
+              </div>                </td>
+
+            </tr>
+
+            
+
+          </table></td>
+
+        </tr>
+
+      </table>
+
+      <p>&nbsp;</p>
+
+      <hr width="92%" />
+
+      <p>&nbsp;</p>
+
+      <div align="center" class="style18">jump to variable:</div>
+
+      <div align="center">  - <a href="#lat">Latitude</a> - <a href="#int">Intensity</a> - <a href="#34kt">34kt wind radius</a> - <a href="#max">Max wind radius</a> -<br />
+
+        <br />
+
+      </div>
+
+      <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="WEKA spread">
+
+        <tr bgcolor="#666666">
+
+          <td width="88" align="right"><div align="right"><span class="style11"><span class="style16"><span class="style16"></span></span></span></div></td>
+
+          <td><div align="center" class="style16"><span class="style17">Dataset</span></div></td>
+
+          <td><div align="center" class="style16"><span class="style17">Classifier</span></div></td>
+
+          <td><div align="center" class="style16"><span class="style17">Sumarry</span></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right" class="style16"><span class="style11">Longitude</span></div></td>
+
+          <td width="212"><div align="center" class="style14">kiveo_dataset</div></td>
+
+          <td width="257"><div align="center" class="style14">LinearRegression    -S 0 -R 1.0E8</div></td>
+
+          <td width="393"><div align="left" class="style14">Correlation    coefficient                  0.9644</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                   2.2218</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error            3.5241</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error          23.2721 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error    26.4269 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of    Instances         10200  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (j48)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                0.8795</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                   7.3856</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error            10.772</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error          42.7102 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error    47.6687 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances       10200    </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.7516</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                     10.7144</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                 14.9309</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 61.9609 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             66.0727</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances       10200    </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomForest)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.8969</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      7.2007</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                 10.0768</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 41.6413 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             44.5922 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances        10200   </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomTree)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.8077</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      9.4622</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                 13.4887</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 54.7191 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             59.6907 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances           10200</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.7781</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                     10.5136</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                 14.1954</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 60.7993 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             62.8181 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances         10200  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Stacking</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                 -0.0341</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                     17.2923</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                 22.5977</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                100      %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            100      %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances       10200</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right" class="style16"><span class="style11"><a name="lat" id="lat"></a>Latitude</span></div></td>
+
+          <td><div align="center" class="style14">cane_coders_finaldataset</div></td>
+
+          <td><div align="center" class="style14">
+
+            <div align="left">LinearRegression -S 0 -R    1.0E8</div>
+
+          </div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.7264</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                     1.376</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.3153</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 66.085 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             68.7177</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Multilayer Perceptron</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.938</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      0.0841</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  0.1315</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 31.5336 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             35.0853 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of    Instances            10821  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomForest)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.9126</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      0.1102</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  0.1557</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 41.2969 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             41.5381 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.7088</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      0.188</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  0.2649</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 70.4754 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             70.6789 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right" class="style16"><span class="style11"><a name="int" id="int"></a>Intensity</span></div></td>
+
+          <td><div align="center" class="style14">cane_coders_finaldataset</div></td>
+
+          <td><div align="center" class="style14">Pace Regression</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.7258</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      1.3734</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.3175</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 65.96   %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             68.7855 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (j48)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.6218</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      1.7563</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.6657</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 84.3538 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             79.1193 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821   </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.5177</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      1.9134</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.8833</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 91.8987 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             85.5763 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821   </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomForest)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.6247</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      1.7655</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.6306</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 84.7956 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             78.0766 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomTree)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.2728</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      2.5669</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  3.8312</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                123.2838 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            113.7114 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+
+          <td><div align="left" class="style14">Total Number of Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Bagging (REPtree)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.7498</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      1.1196</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.2287</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 53.773  %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             66.1498 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of    Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Bagging (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.5592</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      1.902</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  2.7926</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 91.3483 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             82.8862 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right" class="style16"><span class="style11"><a name="34kt" id="34kt"></a>34-kt Wind Radius</span></div></td>
+
+          <td><div align="center" class="style14">cane_coders_finaldataset</div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (j48)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.2543</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      7.4824</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  9.8083</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                111.497  %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            110.1883 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10351   </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.2764</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      6.4249</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  8.5584</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 95.7398 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             96.1465 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10351</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomTree)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.1388</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      8.5274</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                 11.2998</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                127.0692 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            126.9438 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10351  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Multilayer Perceptron</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.3781</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      6.6184</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  8.6818</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 98.6226 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             97.533  %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10351  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Pace Regression</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.4915</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      5.797</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  7.7511</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 86.3827 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             87.077  %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of    Instances            10351   </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Bagging (REPtree)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.4478</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      5.9603</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  7.9585</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 88.8162 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             89.4065 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10351  </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><a name="max" id="max"></a>
+
+            <div align="right" class="style16"><span class="style11">Max Wind Radius</span></div></td><td><div align="center" class="style14">cane_coders_finaldataset</div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (j48)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.1686</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      4.3725</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  5.7166</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                118.0841 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            116.6832 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821     </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (DecisionStump)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.1936</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      3.6293</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  4.8071</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                 98.0128 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error             98.1183 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Regression By Discretation    (RandomTree)</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.0798</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      4.9719</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  6.4834</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                134.2719 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            132.3339 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of Instances            10821     </div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left"></div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center" class="style14">Multilayer Perceptron</div></td>
+
+          <td><div align="left" class="style14">Correlation coefficient                  0.2814</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Mean absolute error                      3.9742</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root mean squared error                  5.1585</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Relative absolute error                107.3267 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Root relative squared    error            105.2914 %</div></td>
+
+        </tr>
+
+        <tr>
+
+          <td align="right" bgcolor="#666666"><div align="right"><span class="style11"><span class="style16"></span></span></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="center"></div></td>
+
+          <td><div align="left" class="style14">Total Number of    Instances            10821    </div></td>
+
+        </tr>
+
+      </table>
+
+      <!-- end #mainContent -->
+
+    </div>
+
+    <div align="center"><br />
+
+    </div>
+
+    <div align="center"><a href="#top">Back to top</a></div>
+
+  </div>
+
+  <div id="footer">
+
+    <p align="center"><span class="style12"><strong><span class="style19">The Cane Coders</span><br />
+
+    </strong>Penn State Meteorology<br />
+
+University Park, PA 16802<br />
+
+Last Updated:
+
+<!-- #BeginDate format:fAm1 -->Friday January 22, 2010<!-- #EndDate -->
+
+    </span><br />
+
+      <!-- end #footer -->
+
+    </p>
+
+  </div>
+
+<!-- end #container --></div>
+
+</body>
+
+</html>
+

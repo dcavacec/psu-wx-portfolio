@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>The Cane Coders </title>
+
+<style type="text/css">
+
+<!--
+
+body {
+
+	background: #666666;
+
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+
+	color: #F2E9E7;
+
+	padding: 30px;
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+	font-size: 100%;
+
+	background-color: #000000;
+
+}
+
+.oneColFixCtrHdr #container {
+
+	width: 1000px;
+
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+
+	border: thin ridge #E20000;
+
+	text-align: left; /* this overrides the text-align: center on the body element. */
+
+	background-color: #666666;
+
+}
+
+.oneColFixCtrHdr #header h1 {
+
+	margin: 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+
+}
+
+.oneColFixCtrHdr #mainContent {
+
+	background-color: #666666;
+
+}
+
+.oneColFixCtrHdr #footer {
+
+	background:#000000;
+
+}
+
+.oneColFixCtrHdr #footer p {
+
+	margin: 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+
+	color: #FF0000;
+
+	padding-top: 10px;
+
+	padding-right: 0;
+
+	padding-bottom: 10px;
+
+	padding-left: 20px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: medium;
+
+	font-style: italic;
+
+	font-weight: lighter;
+
+}
+
+.oneColFixCtrHdr #container #main_block {
+
+	background-color: #666666;
+
+	padding: 5px;
+
+}
+
+.style2 {
+
+	color: #000000;
+
+	font-size: x-large;
+
+}
+
+.style4 {font-style: italic}
+
+.model_content_style {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-style: italic;
+
+	text-indent: 10px;
+
+}
+
+.style12 {font-size: small}
+
+.style19 {font-size: medium}
+
+-->
+
+</style>
+
+<script type="text/javascript">
+
+<!--
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_nbGroup(event, grpName) { //v6.0
+
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+
+  if (event == "init" && args.length > 2) {
+
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+
+      nbArr[nbArr.length] = img;
+
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+        if (!img.MM_up) img.MM_up = img.src;
+
+        img.src = img.MM_dn = args[i+1];
+
+        nbArr[nbArr.length] = img;
+
+    } }
+
+  } else if (event == "over") {
+
+    document.MM_nbOver = nbArr = new Array();
+
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+
+      nbArr[nbArr.length] = img;
+
+    }
+
+  } else if (event == "out" ) {
+
+    for (i=0; i < document.MM_nbOver.length; i++) {
+
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+
+  } else if (event == "down") {
+
+    nbArr = document[grpName];
+
+    if (nbArr)
+
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+
+    document[grpName] = nbArr = new Array();
+
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+
+      nbArr[nbArr.length] = img;
+
+  } }
+
+}
+
+//-->
+
+</script>
+
+</head>
+
+
+
+<body class="oneColFixCtrHdr" onload="MM_preloadImages('assets/home_down.png','assets/project_down.png','assets/data_down.png','assets/about_us_down.png')">
+
+
+
+<div id="container">
+
+  <div id="header">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" id="head" summary="Header layout">
+
+      <tr>
+
+        <td width="25%" valign="top"><a name="top" id="top"></a><img src="assets/cane_banner.png" width="248" height="200" /></td>
+
+        <td width="75%" valign="top"><div align="center"><img src="assets/banner.png" width="752" height="170" /><br />
+
+          <table border="0" cellpadding="0" cellspacing="0" id="navbar">
+
+            <tr>
+
+              <td><a href="index.html" target="_top" onclick="MM_nbGroup('down','group1','home','assets/home_down.png',1)" onmouseover="MM_nbGroup('over','home','assets/home_down.png','assets/home_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/home_up.png" alt="Home" name="home" border="0" id="home" onload="" /></a></td>
+
+              <td><a href="project.html" target="_top" onclick="MM_nbGroup('down','group1','project','assets/project_down.png',1)" onmouseover="MM_nbGroup('over','project','assets/project_down.png','assets/project_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/project_up.png" alt="Project" name="project" border="0" id="project" onload="" /></a></td>
+
+              <td><a href="data.html" target="_top" onclick="MM_nbGroup('down','group1','data','assets/data_down.png',1)" onmouseover="MM_nbGroup('over','data','assets/data_down.png','assets/data_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/data_up.png" alt="Data" name="data" width="188" height="30" border="0" id="data" onload="" /></a></td>
+
+              <td><a href="about_us.html" target="_top" onclick="MM_nbGroup('down','group1','about_us','assets/about_us_down.png',1)" onmouseover="MM_nbGroup('over','about_us','assets/about_us_down.png','assets/about_us_down.png',1)" onmouseout="MM_nbGroup('out')"><img src="assets/about_us_up.png" alt="About Us" name="about_us" width="188" height="30" border="0" id="about_us" onload="" /></a></td>
+
+            </tr>
+
+          </table>
+
+        </div></td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <div id="main_block">
+
+    <div class="oneColFixCtrHdr" id="mainContent">
+
+      <blockquote>
+
+        <table width="100%" border="0" cellspacing="15" cellpadding="3">
+
+          <tr>
+
+            <td colspan="2" valign="top"><div align="left"><span class="style2"><a name="longitude" id="longitude"></a>Longitude Change Model:</span></div></td>
+
+          </tr>
+
+          <tr>
+
+            <td width="36%" valign="top"><p align="right" class="model_content_style"><em>ChangeNLon =</em></p>
+
+              <p align="right" class="model_content_style">0.1299 *  ChangePLat +<br />
+
+                0.6812 *  ChangePLon +<br />
+
+                0.2907 * U925 +<br />
+
+                -0.2251 * U850 +<br />
+
+                0.4065 * U700 +<br />
+
+                0.1723 * U500 +<br />
+
+                0.0835 * U400 +<br />
+
+                0.1741 * U300 +<br />
+
+                0.1016 * V925 +<br />
+
+                -0.1986 * V850 +<br />
+
+                -0.2914 * V400 +<br />
+
+                0.1297 * V300 +<br />
+
+                -0.6045 *  LandMask +<br />
+
+                -0.1546 *  LandSeaTemp +<br />
+
+                45.7676</p></td>
+
+            <td width="64%"><p class="model_content_style"><em>The best longitude predictor was found using the Kiveo dataset. This dataset       had fewer variables than other (particularly our dataset). The variables removed       from the run were the forward differences for latitude, radius of max winds,       intensity, and radius of 34 knot winds. The LandSeaTemp variable was also       removed because it slightly decreased the error while not changing the correlation       coefficient. The linear regression equation disregarded variables from the       dataset in its creation of the equation. The past change in intensity, past       change in radius of maximum wind, past change of radius of 34 knot winds,       v winds at 700mb, and v winds at 500mb were disregarded in compilation. Attempts       were made to consolidate the number of variables, however, when more variables       were removed, the correlation coefficient decreased and error increased slightly.       The U400 winds and the RH were removed because their coefficients were less       than .02. But these variables back into the data during the final analysis. </em></p>
+
+              <p class="model_content_style"><em>To analyze the variables with respect to longitude prediction, we start with       the past latitude change. We have a positive coefficient. If the storm moves       from lower latitudes to higher latitudes, the change in latitude will be positive       representing northerly motion. (In differencing formulas, the difference is       found by subtracting the past value from the present value). If the storm       moves from higher latitudes to lower latitudes, the change is latitude will       be negative, representing southerly motion. Northerly motion will lead to       a positive change in longitude, which corresponds to easterly motion (less       negative value minus more negative value because we have our longitude set       up as more negative further west). Southerly motion will lead to westerly       motion. </em></p>
+
+              <p class="model_content_style"><em>The u wind motion coefficients are mainly positive in this linear regression       equation. The only negative wind coefficient value is at 850. Hurricane movement       and direction is most influenced by the direction of the winds (I took 452       with Dr. Frank!). If easterly winds are present, the change in longitude will       be negative. This negative change represents westerly hurricane movement (the       hurricane is moving into more negative longitude positions). If westerly winds       are present, the change in longitude will be positive, leading to a positive       (easterly) longitude change. </em></p>
+
+              <p class="model_content_style"><em>The v wind component is split in coefficient sign. V wind of 925mb and 300mb       agree with the above argument of hurricane motion most influenced by the winds.       If southerly winds are present at 925mb and 300mb, the change in longitude       will be positive, leading to hurricane movement towards the east. If northerly       winds are present at 925mb and 300mb, hurricane movement is toward west. A       southerly V wind at 850mb and 400mb will lead to hurricane movement to the       west. A northerly wind at 850mb and 400mb will lead to hurricane movement       to the east. </em></p>
+
+            <p><span class="model_content_style"><em>The relative humidity is always going to be positive, and since the coefficient       is positive, it will cause an eastward (positive) change in longitude. This       would only make sense if the u motion is mainly westerly. This is because       a continually positive relative humidity value will result in a positive longitude       change which corresponds to eastward storm movement.</em></span><em></em></p></td>
+
+          </tr>
+
+          <tr>
+
+            <td colspan="2"><div align="left"><span class="style2"><a name="radius" id="radius"></a>Max Radius Change Model:</span></div></td>
+
+          </tr>
+
+          <tr>
+
+            <td valign="top"><div align="right">
+
+              <p><em>Maxradchange =</em></p>
+
+              <p><em> <br />
+
+                0.2257 * latitude +<br />
+
+                -0.119  * intensity +<br />
+
+                -0.2894 * max  radius +<br />
+
+                0.9444 *  latchangeback +<br />
+
+                -0.3699 *  intchangeback +<br />
+
+                -0.0598 *  sstchangefor +<br />
+
+                0.0418 *  uwind250 +<br />
+
+                -0.01   * uwind500 +<br />
+
+                -0.0502 *  uwind700 +<br />
+
+                -0.1039 *  uwind850 +<br />
+
+                0.1379 *  uwind925 +<br />
+
+                0.0182 *  vwind300 +<br />
+
+                0.0196 *  vwind500 +<br />
+
+                -0.1036 *  vwind700 +<br />
+
+                0.0399 *  vwind850 +<br />
+
+                1.0272 *  land(1)/sea(0) +<br />
+
+                19.6556</em></p>
+
+            </div></td>
+
+            <td><p class="model_content_style">The radius of maximum winds is, from the National Hurricane Center, the distance       from the center of a tropical cyclone to the location of the cyclone's maximum       winds. In well-developed hurricanes, the radius of maximum winds is generally       found at the inner edge of the eyewall. </p>
+
+              <p class="model_content_style">For the radius of maximum winds, we (with the help of classmates) determined       our dataset to provide the best correlation coefficient. The correlation coefficient       was low nonetheless, maxing out at .4383 with a relative absolute error of       90.7137%. In attempts to improve these values I discarded as many unimportant       variables as possible. I discarded all the forward change variables besides       the radius of maximum wind forward change and sea surface temperature forward       change. The second run, I discarded longitude, sst, uwind at 250mb, uwind       at 700mb, vwind at 250mb, because the coefficient variables were small. After       group discussion, on the next run I took out all of the u and v wind values       because we related the radius of maximum wind speed to intensity. From previous       experiment, we determined that the intensity of the storm was not dependent       on the winds. The radius of maximum wind speed has more to do with the strength       of the storm rather than the wind values. This slightly increased the correlation       coefficient and decreased the error. I tried to discard the land/sea mask       but it decreased the correlation coefficient and increased the error. Interestingly,       the equation does not use the past radius of maximum wind change or the past       or future sea surface temperature change.</p>
+
+              <p class="model_content_style">The latitude has a positive coefficient, meaning that at higher latitudes       the radius of maximum winds will increase. The radius of maximum winds is       often found at the edge of the eyewall. This is tricky variable to analyze       because hurricane eye size is not always a direct measure of hurricane strength       and intensity. At higher latitudes, the intensity of hurricanes should decrease       because there is less energy available in colder waters to provide latent       heat to power the hurricane. Our data holds true for some hurricanes, because       the stronger the storm, the smaller the eye. As these storms weaken at higher       latitudes, the eye decompresses and increases in size.</p>
+
+              <p class="model_content_style">The intensity variable has a negative coefficient value. Intensity will always       be positive, meaning this variable will contribute to a negative change in       radius of maximum winds. As the intensity increases, the radius of maximum       winds decreases. This agrees with the above thought of stronger storms having       smaller and more compact eyes. </p>
+
+              <p class="model_content_style">The coefficient for the radius of maximum winds is negative. The radius of       maximum wind will always be positive, meaning that it will make the radius       of maximum wind speed (RMW) change negative. The larger the RMW, the more       the RMW will decrease. This make sense because a large radius of maximum wind       will want to intensify and become smaller and more condensed.</p>
+
+              <p class="model_content_style">The change in longitude has a positive coefficient. If the longitude change       is positive, the storm is movement is to the east. This corresponds to a positive       RMW change. If the longitude change is negative, the storm movement is to       the west. This corresponds to a negative RMW change. In the Atlantic, as storms       move further into the Atlantic the temperature generally increases slightly.       The temperature certainly increases once entering the Gulf Stream territory.       This map shows the sea surface temperature gradient of the Atlantic Ocean       for April 17th, 2008 (the Gulf Stream is well defined):<br />
+
+                http://www.erh.noaa.gov/box/maps/sst/2008041700_sst_AB.png<br />
+
+                Once again, assuming temperature gradient increasing to the west, this agrees       with warmer water leading to smaller values of the RMW. </p>
+
+              <p class="model_content_style">The change in intensity has a negative coefficient. If the intensity change       is positive, the RMW will be negative and show a decrease. If the intensity       change is negative, the RMW will be positive and show an increase. This again       agrees with a smaller eye for stronger storms. </p>
+
+            <p><span class="model_content_style">The land/sea mask has a positive coefficient. This variable is zero if over       sea, meaning that it does not contribute to a change in RMW. The contribution       becomes large if the storm is over land. As the storm travels over land, the       RMW will increase, meaning that the storm will weaken.</span></p></td>
+
+          </tr>
+
+          <tr>
+
+            <td colspan="2"><div align="left"><span class="style2"><a name="latitude" id="latitude2"></a>Latitude Change Model:</span></div></td>
+
+          </tr>
+
+          <tr>
+
+            <td valign="top" class="model_content_style"><div align="right">
+
+              <p>latchangefor =</p>
+
+              <p> 0.0001 *  longitude + <br />
+
+                0.8948 *  latchangeback +<br />
+
+                0.0226 *  lonchangeback +<br />
+
+                0.0038 * sst +<br />
+
+                -0.0099 *  sstchangeback +<br />
+
+                0.0015 *  uwind250 +<br />
+
+                -0.0046 *  uwind300 +<br />
+
+                0.0012 * uwind500  +<br />
+
+                0.0095 *  uwind850 +<br />
+
+                -0.0102 *  uwind925 +<br />
+
+                -0.0015 *  vwind250 +<br />
+
+                0.0057 *  vwind300 +<br />
+
+                0.0035 *  vwind500 +<br />
+
+                0.0031 *  vwind700 +<br />
+
+                -0.0023 *  vwind850 +<br />
+
+                0.0035 *  vwind925 +<br />
+
+                -1.0938</p>
+
+            </div></td>
+
+            <td class="model_content_style"><p>Overall a .9468 correlation coefficient with a .06 mean absolute error showed       a very good result for predicting latitude change using our Cane Coder's dataset.       When looking at past changes in latitude and longitude, the past (latchangeback       and lonchangeback) should positive because when looking at the storm direction       change as it progresses; it should be moving north and east, and thus should       have a positive increase in values.</p>
+
+              <p>While looking at latitude, there are a number of different predictors to       consider for the best linear regression model:</p>
+
+              <p> Latchangeback had a positive coefficient which means that if in the past       3 hours the storm moved north, it will likely continue to nead north the next       3 hours.</p>
+
+              <p>Lonchangeback is also positive. This means that if the storm moved east in       the past 3 hours then it will also tend to have a northerly component to its       motion. This makes sense becasue storms that move east usually have more of       northerly component than westerly moving storms.</p>
+
+              <p>The u and v winds are very important to analyze when predicting latitude       change in hurricane. While trying to analyze the u and v wind directions to       make the correlation coefficient even higher for latitude; we tried averaging       the u and v winds for both upper level (250-500) and lower level (700-925).       When using the average u winds, both the upper level and lower level average       winds had negative coefficients. The upper level u winds proved to be more       important than the lower levels. The v average upper and lower level winds       were positive, and thus these correlate to the latitude changing to a northwesterly       direction as predicted. The beta effect can help explain this because when       storms are embedded in an easterly flow, which the negative u winds show,       storms at low latitudes tend to shift northwesterly; thus the positive v winds.       We also averaged the u and v winds from 500-850, because we felt at this level       winds are most important when predicting hurricane track movement. When using       only the u and v average winds between 500 and 850mb, the correlation coefficient       went down slightly. This is most likely due to a lesser input of statistical       factors into the equation. However the u and v predicted directions still       make sense for latitude change; u change negative means an easterly wind which       means an easterly flow for the beta effect would cause a northwesterly wind       and thus a positive v wind. <br />
+
+                  <br />
+
+                The sea surface temperature change back is positive meaning that if the storm       is moving into warmer waters it has a tendacy to have more of a northerly       component to its direction.</p>
+
+              <p>Max radius, which corresponds with the strongest winds, has a positive coefficient       which means as the radius increases the storm tends to move more north. This       makes sense becasue when the radius increases the storm is usually weakening       and weaker storms tend to move more north than stronger storms.. Although       this proved not to be an important factor in determining change in latitude,       because when taken out the correlation coefficient does not change. </p>
+
+            <p>Land/sea did not have a major effect on the latitude change, because it will       be over sea for most of the time and thus have a 0 value that we assigned       to sea. </p></td>
+
+          </tr>
+
+          <tr>
+
+            <td colspan="2"><div align="left"><span class="style2"><a name="intensity" id="intensity2"></a>Intensity Change Model:</span></div></td>
+
+          </tr>
+
+          <tr>
+
+            <td valign="top" class="model_content_style"><div align="right">
+
+              <p>intchangefor =</p>
+
+              <p> -0.0167 * latitude +<br />
+
+                0.0038 * longitude +<br />
+
+                -0.0141 * intensity +<br />
+
+                0.7033 * intchangeback +<br />
+
+                0.0202 * sst +<br />
+
+                -1.0156 * land(1)/sea(0) +<br />
+
+                -4.5125</p>
+
+            </div></td>
+
+            <td class="model_content_style"><p>The above is the simple linear regression output for a 3 hour intensity change       forecast. It had a correlation of .7264. Other methods were tried, but the       linear regression still had the best correlation. Below is a description of       each variable used and a brief physical description of why the coefficient       makes sense.</p>
+
+              <p>Latitude has negative coefficient. This means that the further north a storm,       the smaller its intensity change will be. This makes sense because storms       tend to intensify less the further north they are.</p>
+
+              <p>Longitude has a slight positive coefficient. This means that storms tend       to increase in intensity more when they are further east. This makes some       physical sense, because most storms go through an initial intensification       after they form in the east Atlantic, while storms further west may either       weaken or strengthen.</p>
+
+              <p>Intensity has a negative coefficient. This means that the stronger a storm       currently is the less it will intensify in 3 hours. This makes sense because       storms can only become so strong before they start to weaken at least a little.</p>
+
+              <p>Intensity change previous has a strong positive correlation to intensity       change future. This makes sense because if a storm intensified the last 3       hours, then it will most likely intensify the next 3 hours. The coefficient       of .7 means that the previous intensity change is minimized a little in the       model, which also makes sense.</p>
+
+              <p>SST is another important variable in predicting 3 hour intensity changes.       It has a positive coefficient meaning the warmer the water the larger the       increase in intensity. This agrees with the current understanding of hurricanes.</p>
+
+              <p>Land/sea has a value of 0 if the storm is over water, and 1 if over land.       It has a negative coefficient, meaning that a storm over land will weaken       faster than a storm over water. This is also what is understood and observed       currently.</p>
+
+            <p>I also ran multiple model runs, using only one variable to predict future       intensity change. The best variable was by far the past intensity change,       which is expected since this is a statistical model. The second best was the       change in the radius of maximum winds. This variable had a low correlation,       but had a negative coefficient. This makes sense, because the smaller the       eye of a hurricane becomes, usually the stronger it will become. What is interesting       is that this variable was not used by the computer when it was allowed to       choose from multiple variables. This must mean that when paired with the group       of variables above, the max radius change is not significant. Our forecast       is only for 3 hours, so for longer time periods it may be. Other variables       that the computer did not find significant where the u and v wind shear and       the absolute values of those shears. This may be because a current wind shear       may take longer than 3 hours to impact a storm. If we have made a variable       that calculated the change in wind shear that may have been more useful, but       once again our timescale may have been too short.</p></td>
+
+          </tr>
+
+          <tr>
+
+            <td colspan="2"><div align="left"><span class="style2"><a name="sst" id="sst2"></a>Sea Surface Temperature Model:</span></div></td>
+
+          </tr>
+
+          <tr>
+
+            <td colspan="2"><p class="model_content_style">Overall there was a correlation coefficient of .8261 and an error of 1.69       (higher error) in predicting sea surface temperatures, but this is an important       variable to consider when predicting hurricane tracks. Higher sea surface       temperatures can be a key indicator in hurricane intensification. For sea       surface temperatures, the past sea surface temperatures should be warmer than       the predicted temperatures. This may seem contradictory, but this makes sense       because as latitude increases as you go further north, sea surface temperatures       should be lower. The u and v wind directions change sporadically throughout       the lower to upper levels and are secondary to the latchangeback variable.       Therefore they are not important synoptically for the latitude change analysis. <br />
+
+            </p>
+
+              <p class="model_content_style"> When looking at sea surface temperature, this was the best linear regression       model we could come up with, using Cane Coder's dataset. </p>
+
+              <p class="model_content_style">A negative coefficient for latitude means the further north the storm track       is, the colder the sea surface temperature; which makes sense. </p>
+
+              <p class="model_content_style">Longitude also has a negative coefficient which means the further east the       storm is, the colder the sea surface temperature which makes sense.</p>
+
+              <p class="model_content_style">Intensity should increase as sea surface temperature increases, and this       also proved true. </p>
+
+              <p class="model_content_style">Lonchangeback has a negative coefficient, which means a higher sea surface       temperature as the storm moves west.</p>
+
+              <p class="model_content_style">A positive maxradchange back coefficient means as the radius increases, the       higher the sea surface temperature. </p>
+
+              <p class="model_content_style">Winds do not play a major factor in predicting sea surface temperature as       the coefficients for these were all small, and there is no meteorological       physical explanation for this. </p>
+
+            <p class="model_content_style">Land/sea should only be important over the sea when considering sea surface       temperatures, and thus this is not a major predictor either. </p></td>
+
+          </tr>
+
+        </table>
+
+        <div align="center"><a href="#top">Back to top</a><br />
+
+        </div>
+
+        <div align="center"></div>
+
+      </blockquote>
+
+      </div>
+
+  </div>
+
+  <div id="footer">
+
+    <p align="center"><span class="style12"><strong><span class="style19">The Cane Coders</span><br />
+
+    </strong>Penn State Meteorology<br />
+
+University Park, PA 16802<br />
+
+Last Updated:
+
+<!-- #BeginDate format:fAm1 -->Friday January 22, 2010<!-- #EndDate -->
+
+    </span><br />
+
+      <!-- end #footer -->
+
+    </p>
+
+  </div>
+
+<!-- end #container --></div>
+
+</body>
+
+</html>
+

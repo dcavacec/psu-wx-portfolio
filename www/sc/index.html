@@ -1,0 +1,249 @@
+<html>
+	<head>
+		
+		<style type="text/css">
+			td { text-align: center;
+					vertical-align: middle;
+					font-size: 18px }
+			p	{ text-indent: 35px }
+			li { list-style-type:none } 
+			body { font-size: 18px;
+					font-family: arial }
+			h1 { font-size: 34px }
+		</style>
+		<title>
+				State College, PA Temperature Trend and Climotology 
+				Investigation
+		</title>
+	</head>
+	<body bgcolor="darkgray">
+		<h1>
+			<center>
+				State College, PA Temperature Trend and Climotology 
+				Investigation
+			</center>
+		</h1>
+		<table cellpadding="5" border="0" align="center">
+			<tr>
+				<td><font size="5"><a href="#intro">Introduction</a></font></td>
+				<td><font size="5"><a href="#mstone">Milestones</a></font></td>
+				<td><font size="5"><a href="#results">Results</a></font></td>
+				<td><font size="5"><a href="resources.html">IT Resources</a></font></td>
+			</tr>
+		</table>
+		<hr>
+		
+		<a name="intro">
+		<h2><u><center>Introduction</center></u></h2>
+		</a>
+		<p>
+			This project was developed as part of an independent study with Dr. George Young of the Penn State Meteorology Department. The course goals were formulated in response to the increasing demand for information technology expertise in the weather risk management and operational weather forecasting industries. The structure of the course was comprised of milestones, which divide the project into manageable sections of achievement. These milestones focused on the Perl, Fortran, and Excel VBA languages, as well as HTML coding. The project objective was to raise the student's programmatic understanding to a functional level that can be immediately utilized in the meteorology industry. </p>
+			
+		<p>
+			The chosen application of the project was an investigation of the historical temperature trends with respect to their thirty-year normal values in State College, PA. This task facilitated learning Perl's ability to match and manipulate text data with regular expressions and gather such data automatically from the web, Fortran's lightning calculating speed and derived data types, and Excel VBA's macro recording and editing, data importing, and image exporting. The results of the analysis are provided graphically below, illustrating the mean and median run length of max, min, and average temperature above and below their thirty year normals.</p>
+		<hr/>
+		
+		<a name="mstone">
+		<h2><u><center>Project Milestones</center></u></h2><br>
+		</a>
+		<table border="1", cellpadding="3", align="center">
+			<tr>
+				<td><b>Milestone</b></td>
+				<td><b>Task</b></td>
+				<td><b>Code</b></td>
+				<td><b>Link</b></td>
+			</tr>
+			<tr>
+				<td>I</td>
+				<td>Download the data from the weather station web page, and 
+					save it to file.</td>
+				<td>
+					WWW::Mechanize module<br>
+					File creation/writing<br>
+					While flow control<br>
+					Regular Expressions
+				</td>
+				<td>
+					<ul>
+						<li>
+							<a href="ms123/ms_i_ii_iii.docx">
+							report (.docx)</a>
+						</li>
+						<li>
+							<a href="ms123/ms_i_ii_iii.pl">
+							perl code
+							</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>II</td>
+				<td>Format the data to be Fortran-friendly, and parse it to an 
+				array</td>
+				<td>
+					Fortran::Format module<br>
+					If/then construct<br>
+					Storage to array<br>
+				</td>
+				<td>
+					<ul>
+						<li>
+							<a href="ms123/ms_i_ii_iii.docx">
+							report (.docx)</a>
+						</li>
+						<li>
+							<a href="ms123/ms_i_ii_iii.pl">
+							perl code
+							</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>III</td>
+				<td>Extend code to cover entire POR</td>
+				<td>
+					Date::Simple module<br>
+					List control<br>
+				</td>
+				<td>
+					<ul>
+						<li>
+							<a href="ms123/ms_i_ii_iii.docx">
+							report (.docx)</a>
+						</li>
+						<li>
+							<a href="ms123/ms_i_ii_iii.pl">
+							perl code
+							</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>IV</td>
+				<td>Write a Fortran program to apply statistical analysis 
+				to the collected data </td>
+				<td>
+					Program: tdata<br>
+					Module: my_temps<br>
+					Subroutines: file2array,<br>
+						array2screen,<br> 
+						tavgnorms,<br> 
+						high_norm_runs,<br> 
+						low_norm_runs,<br>
+						avg_norm_runs
+				</td>
+				<td>
+					<ul>
+						<li>
+							<a href="ms4/ms_iv.docx">
+							report (.docx)</a>
+						</li>
+						<li>
+							<a href="ms4/ms_iv.f95">
+							fortran code
+							</a>
+						</li>
+						<li>
+							<a href="ms4/rescraped_trend_space.txt">
+								scraped data
+							</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>V</td>
+				<td>Extend the program code to do graphical output of the 
+				results.</td>
+				<td>VBA in Excel</td>
+				<td>
+					<ul>
+						<li>
+							<a href="ms5/ms_v.docx">
+							report (.docx)</a>
+						</li>
+						<li>
+							<a href="ms5/ms_v.xlsm">
+							excel vba code
+							</a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table><br><hr></hr>
+		
+		<a name="results">
+		<h2><u><center>Results</center></u></h2>
+		</a>
+		<table border="0", cellpadding="5", align="center">
+			<tr>
+				<td width="30%">
+					<img src="high.png">
+					</img>
+				</td>
+				<td valign="top">
+					Points of Interest:
+					<ul>
+						<li>1940: mean trend above normal > 6</li>
+						<li>1958-'63: average mean trend above normal ~ 4</li>
+						<li>apparent positive trend in runs both above and 
+						below normal from 1926-1960</li>
+					</ul>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<img src="low.png">
+					</img>
+				</td>
+				<td valign="top">
+					Points of Interest:
+					<ul>
+						<li>1958-'67: above normal mean trend > 4 for 8/10 
+						years</li>
+						<li>1998: below normal mean length exceeds 7 
+						and median is 5</li>
+						<li> trends of length > 4 much more frequent for runs
+						below normal than runs above normal</li>
+					</ul>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<img src="avg.png">
+					</img>
+				</td>
+				<td valign="top">
+					Points of Interest:
+					<ul>
+						<li>10 incidents of mean below normal run length > 5</li>
+						<li>mean above normal length never exceeds 4.6</li>
+						<li>clear run-length magnitude superiority in below-normal
+						trends</li>
+						<li>median below-normal run lengths mostly 3</li>
+					</ul>
+				</td>
+			</tr>
+		</table><hr/>
+		
+		<center>
+			<h3>
+				<i>
+					&copy; 2009 David Cavaceci
+				</i>
+			</h3>
+			<h4>
+				<i>
+					<a href="mailto:dcavacec@outlook.com">dcavacec@outlook.com
+					</a>
+				</i>
+			</h4>
+		</center>
+
+	</body>
+</html>
